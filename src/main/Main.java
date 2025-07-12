@@ -7,49 +7,16 @@ import domain.Salesman;
 public class Main {
 
 	public static void main(String[] args) {
-		printEmployee(new Manager());
-		printEmployee(new Salesman());
-
+		Employee employee = new Employee();
+		Salesman salesman = new Salesman();
+		Manager manager = new Manager();
+		
+		System.out.println(employee instanceof Employee); // True
+		System.out.println(salesman instanceof Employee); // True
+		System.out.println(manager instanceof Employee); // True
+		System.out.println(employee instanceof Manager); // False
+		System.out.println(employee instanceof Salesman); // False
+		//System.out.println(salesman instanceof Manager);
+		
 	}
-	
-	public static void printEmployee(Employee employee) {
-		System.out.printf("=======%s=======\n", employee.getClass().getCanonicalName());
-
-		switch(employee) {
-			case Manager manager ->{
-				manager.setCode("123");
-				manager.setName("João");
-				manager.setSalary(5000);
-				manager.setLogin("joao");
-				manager.setPassword("123456");
-				manager.setComission(1200);
-				
-				
-				
-				System.out.println(manager.getCode());
-				System.out.println(manager.getName());
-				System.out.println(manager.getSalary());
-				System.out.println(manager.getLogin());
-				System.out.println(manager.getPassword());
-				System.out.println(manager.getComission());
-			}
-			case Salesman salesman -> {
-				salesman.setCode("123");
-				salesman.setName("Lucas");
-				salesman.setSalary(2800);
-				salesman.setPercentPerSold(10);
-				salesman.setSoldAmount(1000);
-				
-				System.out.println(salesman.getCode());
-				System.out.println(salesman.getName());
-				System.out.println(salesman.getSalary());
-				System.out.println(salesman.getPercentPerSold());
-				System.out.println(salesman.getSoldAmount());
-			}
-		}
-		System.out.println(employee.getClass() + " full salary with 500 extra: R$" + employee.getFullSalary(500));
-		System.out.println(employee.getClass() + " full salary: R$" + employee.getFullSalary());
-		System.out.printf("================\n");
-	}
-
 }

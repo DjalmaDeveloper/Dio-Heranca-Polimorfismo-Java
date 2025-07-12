@@ -1,6 +1,6 @@
 package domain;
 
-public non-sealed class Salesman extends Employee {
+public class Salesman extends Employee {
 
 	private double percentPerSold;
 	
@@ -43,8 +43,11 @@ public non-sealed class Salesman extends Employee {
 		this.soldAmount = soldAmount;
 	}
 
-	@Override
 	public double getFullSalary() {
 		return this.salary + ((soldAmount * percentPerSold) / 100);
+	}
+	
+	public double getFullSalary(double extra) {
+		return this.getFullSalary() + extra;
 	}
 }
